@@ -1,0 +1,21 @@
+<header>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Employee Review System</a>
+      <% if(locals.user) { %>
+      <a class="navbar-brand" href="/">Hello <%=locals.user.name%></a>
+      <%}%>
+
+      <form class="d-flex">
+        <% if(locals.user && locals.user.isAdmin) { %>
+        <a class="navbar-brand" href="">Assign Task</a>
+        <a class="navbar-brand" href="">E-dashboard</a>
+        <a class="navbar-brand" href="">R-dashboard</a>
+        <a class="navbar-brand" href="">Signout</a>
+        <%} else { %>
+        <a class="navbar-brand" href="">SignIn</a>
+        <% } %>
+      </form>
+    </div>
+  </nav>
+</header>
