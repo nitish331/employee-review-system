@@ -8,12 +8,12 @@
 
       <form class="d-flex">
         <% if(locals.user && locals.user.isAdmin) { %>
-        <a class="navbar-brand" href="">Assign Task</a>
-        <a class="navbar-brand" href="">E-dashboard</a>
-        <a class="navbar-brand" href="">R-dashboard</a>
-        <a class="navbar-brand" href="">Signout</a>
+        <a class="navbar-brand" href="/admin/assigntask">Assign Task</a>
+        <a class="navbar-brand" href="/admin/employeerecords">E-dashboard</a>
+        <a class="navbar-brand" href="/review/reviewdata">R-dashboard</a>
+        <a class="navbar-brand" href="/users/SignOut">Signout</a>
         <%} else { %>
-        <a class="navbar-brand" href="">SignIn</a>
+        <a class="navbar-brand" href="/users/SignOut">Signout</a>
         <% } %>
       </form>
     </div>

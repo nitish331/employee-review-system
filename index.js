@@ -36,7 +36,7 @@ app.use(
         mongoUrl: "mongodb://localhost/Employee_Review",
         autoRemove: "disabled",
         mongooseConnection: db,
-        collectionName: "session",
+        collectionName: "sessions",
       },
       function (error) {
         console.log(error || "connect mongodb setup is ok");

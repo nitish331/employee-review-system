@@ -7,4 +7,7 @@ router.get("/", home);
 
 // adding users routes
 router.use("/users", require("./user.js"));
+
+// adding reviews router
+router.use("/review", require("./review.js"));
 module.exports = router;

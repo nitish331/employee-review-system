@@ -54,7 +54,13 @@ module.exports.signup = function (req, resp) {
 
 // sign out the user
 module.exports.signOut = function (req, res) {
-  req.logout();
+  req.logout(function (err) {
+    if (err) {
+      console.log("error");
+      return;
+    }
+    res.redirect("/");
+  });
   return res.redirect("/");
 };
 
