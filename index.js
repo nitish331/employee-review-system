@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const db = require("./config/mongoose");
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 // use session
 const session = require("express-session");

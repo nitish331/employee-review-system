@@ -2,23 +2,23 @@ const User = require("../models/EmpoloyeeModel");
 const Reviews = require("../models/review");
 
 // ASSIGN TASK PAGE SENDS WITH ALL EMPLOYEENAME
-module.exports.assignTask = async function (req, resp) {
+module.exports.assignTask = async function (req, res) {
   try {
     if (!req.isAuthenticated() || req.user.isAdmin == false) {
-      return resp.redirect("/");
+      return res.redirect("/");
     }
 
     let users = await User.find({});
 
-    return resp.render("assign_task", { users });
+    return res.render("assign_task", { users });
   } catch (error) {
     console.log(`Error during assign task page :  ${error}`);
-    resp.redirect("back");
+    res.redirect("back");
   }
 };
 
 // ON SUBMIT THE ASSIGN TASK
-module.exports.taskassigned = async function (req, resp) {
+module.exports.taskassigned = async function (req, res) {
   try {
     if (!req.isAuthenticated() || req.user.isAdmin == false) {
       return resp.redirect("/");
@@ -38,10 +38,10 @@ module.exports.taskassigned = async function (req, resp) {
     from_employee.save();
     console.log("Task assigned successfully");
 
-    return resp.redirect("back");
+    return res.redirect("back");
   } catch (error) {
     console.log(`Error during assigned task :  ${error}`);
-    resp.redirect("back");
+    res.redirect("back");
   }
 };
 
