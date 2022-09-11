@@ -33,7 +33,8 @@ app.use(
     },
     store: MongoStore.create(
       {
-        mongoUrl: "mongodb://localhost/Employee_Review",
+        mongoUrl:
+          "mongodb+srv://Nitish:nitish33@cluster0.ksobj.mongodb.net/Ecommerce?retryWrites=true&w=majority",
         autoRemove: "disabled",
         mongooseConnection: db,
         collectionName: "sessions",
