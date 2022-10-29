@@ -154,22 +154,6 @@ module.exports.CreateUser = async function (req, resp) {
   }
 };
 
-// VIEW THE STUDENT FROM ADMIN
-module.exports.ViewEmployee = async function (req, resp) {
-  try {
-    if (!req.isAuthenticated() || req.user.isAdmin == false) {
-      return resp.redirect("/");
-    }
-
-    let user = await User.findById(req.params.id);
-
-    return resp.render("viewEmployee", { user });
-  } catch (error) {
-    console.log(`Error during view an employee :  ${error}`);
-    resp.redirect("back");
-  }
-};
-
 // DELETE THE EMPLOYEE DATA FROM ADMIN
 module.exports.deleteEmployee = async function (req, resp) {
   try {

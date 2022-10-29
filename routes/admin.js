@@ -35,9 +35,6 @@ router.post("/UpdatedUser/:id", passport.checkAuthentication, UpdatedUser);
 // ROUTES for /admin/create_user
 router.post("/create_user", passport.checkAuthentication, CreateUser);
 
-// ROUTES for /admin/view/<id>
-router.get("/view/:id", passport.checkAuthentication, ViewEmployee);
-
 router.get("/delete/:id", passport.checkAuthentication, deleteEmployee);
 
 // ROUTES for /admin/makeadmin
